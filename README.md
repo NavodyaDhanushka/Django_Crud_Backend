@@ -1,7 +1,39 @@
 # Django_Crud_Backend
 
-A simple Django backend project that provides basic CRUD (Create, Read, Update, Delete) operations using Django and SQLite.
+This is a simple Django backend project that provides basic CRUD (Create, Read, Update, Delete) operations for managing data using Django and SQLite. The project focuses on backend functionality only, utilizing Django’s ORM to handle database interactions and exposing API endpoints that can be tested using tools such as Postman. It demonstrates core Django concepts including models, views, URL routing, and database integration without a frontend interface.
 
+## 📂 Project Structure
+
+The project follows a modular Django structure where the main configuration
+is separated from application logic. The `students` app handles all CRUD
+operations related to student management, while the `config` directory
+contains global settings and URL configurations.
+
+``` text
+django_crud_backend/
+│
+├── config/                  # Project settings
+│   ├── __init__.py
+│   ├── settings.py          # Django settings (MySQL config)
+│   ├── urls.py              # Main URL routing
+│   └── wsgi.py
+│
+├── students/                # Student CRUD app
+│   ├── migrations/          # Database migration files
+│   ├── __init__.py
+│   ├── admin.py             # Admin panel configuration
+│   ├── apps.py
+│   ├── models.py            # Student model
+│   ├── views.py             # API CRUD logic
+│   └── urls.py              # App-level API routes
+│
+├── manage.py                # Django command-line utility
+├── requirements.txt         # Project dependencies
+├── .gitignore               # Ignored files for Git
+└── README.md                # Project documentation
+
+
+```
 ```models.py```
 
 This file defines the structure of the database. For example, the Student model describes what information (name, email, birthday) is stored for each student. Django uses this file to understand how the database should look.
@@ -185,17 +217,3 @@ Response:
 ]
 
 ```
-## 📂 Project Structure
-Django_Crud_Backend/
-│
-├── config/               # Project settings
-├── students/             # App for CRUD operations
-│   ├── migrations/
-│   ├── models.py
-│   ├── views.py
-│   └── urls.py
-│
-├── db.sqlite3            # SQLite database
-├── manage.py             # Django management file
-└── README.md
-
